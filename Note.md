@@ -9,4 +9,11 @@ instead of building two separate app for Android and iOS you can build one with 
 - Pinterest
 - Skype
 - Uber Eats
-  and more
+- and more
+
+## Expo
+
+for building app there is two way
+
+- React Native CLI
+- Expo CLI
