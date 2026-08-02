@@ -1,10 +1,24 @@
-import { Platform, StatusBar, StyleSheet, Text } from "react-native";
+import {
+  Dimensions,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  View,
+} from "react-native"; 
 
 export default function App() {
+  console.log(Dimensions.get("screen"));
   return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "50%",
+          height: 70,
+        }}
+      ></View>
+    </SafeAreaView>
   );
 }
 
