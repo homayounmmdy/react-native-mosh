@@ -17,3 +17,8 @@ for building app there is two way
 
 - React Native CLI
 - Expo CLI
+
+## Align Item VS Align Content
+
+**Align Items** = positions **individual items** on the cross axis. Always works.  
+**Align Content** = distributes **multiple flex lines** on the cross axis. Only works with `flex-wrap: wrap` and multiple rows/columns. No wrap = no effect.
