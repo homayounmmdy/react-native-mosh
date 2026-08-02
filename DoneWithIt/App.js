@@ -1,25 +1,17 @@
-import { Button, StyleSheet, View } from "react-native";
+import { Platform, StatusBar, StyleSheet, Text } from "react-native";
 
 export default function App() {
   return (
-    <View style={[containerStyle, styles.container]}>
-      <Button
-        color="orange"
-        title="Click Me"
-        onPress={() => console.log("button pressed")}
-      />
+    <View style={styles.container}>
+      <Text>Hello World</Text>
     </View>
   );
 }
-
-const containerStyle = { backgroundColor: "orange" };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
