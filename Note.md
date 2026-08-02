@@ -22,3 +22,18 @@ for building app there is two way
 
 **Align Items** = positions **individual items** on the cross axis. Always works.  
 **Align Content** = distributes **multiple flex lines** on the cross axis. Only works with `flex-wrap: wrap` and multiple rows/columns. No wrap = no effect.
+
+## Flex Basis , Flex grow , Flex Shrink
+
+**Flex-basis** = starting size of an item before space is distributed (like `width` but for flex).  
+**Flex-grow** = how much an item **expands** to fill extra space (0 = no grow, 1+ = proportional).  
+**Flex-shrink** = how much an item **shrinks** when space is tight (1 = shrinks, 0 = doesn't).
+
+
+**Short summary:**
+
+- **Basis** = default size.
+- **Grow** = ability to take extra space.
+- **Shrink** = ability to give up space when needed.
+
+> Together they define: *"Start at basis, then grow or shrink as needed."*
