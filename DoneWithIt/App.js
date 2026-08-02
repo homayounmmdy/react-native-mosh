@@ -1,22 +1,18 @@
-import { Alert, Button, StyleSheet, View } from "react-native";
+import { Button, StyleSheet, View } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={[containerStyle, styles.container]}>
       <Button
         color="orange"
         title="Click Me"
-        onPress={() =>
-          // Alert.alert("My title", "My message", [
-          //   { text: "Yes", onPress: () => console.log("Yes") },
-          //   { text: "No", onPress: () => console.log("No") },
-          // ])  
-          Alert.prompt("My title", "My message", (text) => console.log(text))
-        }
+        onPress={() => console.log("button pressed")}
       />
     </View>
   );
 }
+
+const containerStyle = { backgroundColor: "orange" };
 
 const styles = StyleSheet.create({
   container: {
