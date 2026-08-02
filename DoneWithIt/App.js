@@ -1,31 +1,12 @@
-import { useDeviceOrientation } from "@react-native-community/hooks";
-import {
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  View,
-} from "react-native";
+import { View } from "react-native";
 
 export default function App() {
-  const { landscape } = useDeviceOrientation();
-  return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          backgroundColor: "dodgerblue",
-          width: "100%",
-          height: landscape ? "100%" : "30%",
-        }}
-      ></View>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  return <View style={{
     backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
+    flex : 0.5
+  }}>
+    <View style={{backgroundColor: "dodgerblue", flex: 2}}/>
+    <View style={{backgroundColor: "gold", flex: 1}}/>
+    <View style={{backgroundColor: "tomato", flex: 1}}/>
+  </View>;
+}
