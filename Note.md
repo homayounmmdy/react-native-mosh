@@ -29,18 +29,18 @@ for building app there is two way
 **Flex-grow** = how much an item **expands** to fill extra space (0 = no grow, 1+ = proportional).  
 **Flex-shrink** = how much an item **shrinks** when space is tight (1 = shrinks, 0 = doesn't).
 
-
 **Short summary:**
 
 - **Basis** = default size.
 - **Grow** = ability to take extra space.
 - **Shrink** = ability to give up space when needed.
 
-> Together they define: *"Start at basis, then grow or shrink as needed."*
+> Together they define: _"Start at basis, then grow or shrink as needed."_
 
 # Styles
 
 ## Border
+
 ```js
 import { View } from "react-native";
 
@@ -66,7 +66,6 @@ export default function App() {
     </View>
   );
 }
-
 ```
 
 ## Shadow
@@ -94,6 +93,51 @@ export default function App() {
           shadowOpacity: 1,
           // android
           elevation: 20,
+        }}
+      ></View>
+    </View>
+  );
+}
+```
+
+## Paddings and Margins
+
+```js
+import { View } from "react-native";
+
+export default function App() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: 100,
+          height: 100,
+          padding: 20,
+          paddingHorizontal: 10,
+          paddingLeft: 30,
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "gold",
+            width: 50,
+            height: 50,
+          }}
+        ></View>
+      </View>
+      <View
+        style={{
+          backgroundColor: "tomato",
+          width: 100,
+          height: 100,
+          margin: 20,
         }}
       ></View>
     </View>
