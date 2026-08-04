@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
     "@react-native-community/hooks": "^100.1.0",
     "expo": "~57.0.9",
     "expo-status-bar": "~57.0.1",
