@@ -1,5 +1,5 @@
-import ListingDetails from "./app/screens/ListingDetails";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
 
 export default function App() {
-  return <ListingDetails />;
+  return <ViewImageScreen />;
 }
