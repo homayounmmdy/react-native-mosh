@@ -1,6 +1,6 @@
 import { Image, StyleSheet, View } from "react-native";
-import AppText from "./AppText";
 import colors from "../config/colors";
+import AppText from "./AppText";
 
 function ListItem({ title, subTitle, image }) {
   return (
@@ -17,6 +17,7 @@ function ListItem({ title, subTitle, image }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    padding: 50,
   },
   image: {
     width: 70,
@@ -25,11 +26,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   subTitle: {
-    color : colors.medium
+    color: colors.medium,
   },
-  title : {
-    fontWeight : "500",
-  }
+  title: {
+    fontWeight: "500",
+  },
 });
 
 export default ListItem;
