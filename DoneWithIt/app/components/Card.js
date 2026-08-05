@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: colors.white,
     marginBottom: 20,
-    overflow : 'hidden'
+    overflow: "hidden",
   },
   image: {
     width: "100%",
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     marginBottom: 7,
   },
   subTitle: {
-    color: color.secondary,
+    color: colors.secondary,
     fontWeight: "bold",
   },
 });
