@@ -22,6 +22,7 @@ const initialMessage = [
 
 function MessagesScreen(props) {
   const [messages, setMessage] = useState(initialMessage);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message) => {
     setMessage(messages.filter((m) => m.id !== message.id));
@@ -41,6 +42,17 @@ function MessagesScreen(props) {
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
+            refreshing={refreshing}
+            onRefresh={() => {
+              setMessage([
+                {
+                  id: 2,
+                  title: "T2",
+                  description: "D2",
+                  image: require("../assets/mosh.jpg"),
+                },
+              ]);
+            }}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
