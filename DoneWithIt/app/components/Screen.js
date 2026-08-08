@@ -1,11 +1,14 @@
 import Constants from "expo-constants";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 function Screen({ children, style }) {
   return (
     <GestureHandlerRootView>
-      <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>;
+      <SafeAreaView style={[styles.screen, style]}>
+        <View style={style}>{children}</View>
+      </SafeAreaView>
+      ;
     </GestureHandlerRootView>
   );
 }
