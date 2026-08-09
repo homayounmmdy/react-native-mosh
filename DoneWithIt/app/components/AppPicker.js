@@ -2,6 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import {
   Button,
+  FlatList,
   Modal,
   StyleSheet,
   TouchableWithoutFeedback,
@@ -9,9 +10,10 @@ import {
 } from "react-native";
 import defaultStyles from "../config/styles";
 import AppText from "./AppText";
+import PickerItem from "./PickerItem";
 import Screen from "./Screen";
 
-function AppPicker({ icon, placeholder, ...otherProps }) {
+function AppPicker({ icon, items, placeholder }) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
@@ -34,6 +36,13 @@ function AppPicker({ icon, placeholder, ...otherProps }) {
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
+        <FlatList
+          data={items}
+          keyExtractor={(item) => item.value.toString()}
+          renderItem={({ item }) => (
+            <PickerItem label={item.label} onPress={() => console.log(item)} />
+          )}
+        />
         <Screen>
           <Button title="Close" onPress={() => setModalVisible(false)} />
         </Screen>
