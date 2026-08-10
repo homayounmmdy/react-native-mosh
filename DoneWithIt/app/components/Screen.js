@@ -6,7 +6,7 @@ function Screen({ children, style }) {
   return (
     <GestureHandlerRootView>
       <SafeAreaView style={[styles.screen, style]}>
-        <View style={style}>{children}</View>
+        <View style={[styles.view, style]}>{children}</View>
       </SafeAreaView>
     </GestureHandlerRootView>
   );
@@ -15,6 +15,9 @@ function Screen({ children, style }) {
 const styles = StyleSheet.create({
   screen: {
     paddingTop: Constants.statusBarHeight,
+    flex: 1,
+  },
+  view: {
     flex: 1,
   },
 });
