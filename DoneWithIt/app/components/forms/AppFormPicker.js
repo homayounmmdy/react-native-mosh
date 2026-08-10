@@ -7,6 +7,7 @@ export default function AppFormPicker({
   items,
   name,
   placeholder,
+  width
 }) {
   const { errors, setFieldValue, touched, values } = useFormikContext();
   return (
@@ -15,9 +16,10 @@ export default function AppFormPicker({
         items={items}
         onItemSelect={(item) => setFieldValue(name, item)}
         placeholder={placeholder}
+        width={width}
         selectedItem={values[name]}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
   );
-}
+}  

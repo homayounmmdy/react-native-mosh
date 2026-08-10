@@ -41,8 +41,14 @@ export default function ListingEditScreen() {
           maxLength={8} // includes 10000.99
           name="price"
           placeholder="Price"
+          width={120}
         />
-        <Picker items={categories} name="category" placeholder="Category" />
+        <Picker
+          items={categories}
+          name="category"
+          placeholder="Category"
+          width="50%"
+        />
         <FormField
           maxLength={255}
           multiline
