@@ -8,7 +8,6 @@ function Screen({ children, style }) {
       <SafeAreaView style={[styles.screen, style]}>
         <View style={style}>{children}</View>
       </SafeAreaView>
-      ;
     </GestureHandlerRootView>
   );
 }
