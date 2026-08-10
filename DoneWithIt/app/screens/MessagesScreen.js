@@ -18,6 +18,12 @@ const initialMessage = [
     description: "D2",
     image: require("../assets/mosh.jpg"),
   },
+  {
+    id: 3,
+    title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor excepturi voluptas tempora, ullam qui fugit maiores eaque eius?",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eligendi sint quibusdam. Magnam alias omnis facilis assumenda labore expedita exercitationem dolores rem necessitatibus iure, delectus beatae laudantium maiores nobis voluptas?",
+    image: require("../assets/mosh.jpg"),
+  },
 ];
 
 function MessagesScreen(props) {
