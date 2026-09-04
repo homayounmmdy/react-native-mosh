@@ -3,22 +3,22 @@ import AppText from "../components/AppText";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 
-function ListingDetails(props) {
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
   return (
     <View>
-      <Image style={styles.image} source={require("../assets/jacket.jpg")} />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailContainer}>
-        <AppText style={styles.title}>Red jacket for sale</AppText>
-        <AppText style={styles.price}>$100 </AppText>
+        <AppText style={styles.title}>{listing.title}</AppText>
+        <AppText style={styles.price}>${listing.price} </AppText>
         <View style={styles.userContainer}>
-
-        <ListItem
-          image={require("../assets/mosh.jpg")}
-          title="Mosh Hamedani"
-          subTitle="5 Listings"
-        />
-      </View>
+          <ListItem
+            image={require("../assets/mosh.jpg")}
+            title="Mosh Hamedani"
+            subTitle="5 Listings"
+          />
         </View>
+      </View>
     </View>
   );
 }
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   userContainer: {
-    marginVertical : 40
-  }
+    marginVertical: 40,
+  },
 });
 
-export default ListingDetails;
+export default ListingDetailsScreen;
