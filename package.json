@@ -16,7 +16,8 @@
     "react-native-gesture-handler": "~2.32.0",
     "react-native-web": "^0.21.2",
     "yup": "^0.28.5",
-    "expo-image-picker": "~57.0.7"
+    "expo-image-picker": "~57.0.7",
+    "expo-location": "~57.0.7"
   },
   "scripts": {
     "start": "expo start",

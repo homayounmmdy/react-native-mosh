@@ -1,3 +1,5 @@
+import * as Location from "expo-location";
+import { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 import CategoryPickerItem from "../components/CategoryPickerItem";
@@ -26,6 +28,18 @@ const categories = [
 ];
 
 export default function ListingEditScreen() {
+  const [location, setLocation] = useState();
+  const getLocation = async () => {
+    const { granted } = await Location.requestBackgroundPermissionsAsync();
+    if (!granted) return;
+    const {
+      coords: { latitude, longitude },
+    } = await Location.getLastKnownPositionAsync();
+    setLocation({ latitude, longitude });
+  };
+  useEffect(() => {
+    getLocation();
+  }, []);
   return (
     <Screen style={styles.container}>
       <AppForm
