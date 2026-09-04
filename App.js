@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -46,11 +47,32 @@ const Account = () => (
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => (
-    <Tab.Navigator>
-    <Tab.Screen name="Feed" component={Tweets} />
+  <Tab.Navigator
+    screenOptions={{
+      tabBarActiveTintColor: "white",
+      tabBarInactiveTintColor: "black",
+
+      tabBarStyle: {
+        backgroundColor: "tomato",
+        height: 60,
+        paddingBottom: 5,
+      },
+
+      headerShown: false,
+    }}
+  >
+    <Tab.Screen
+      name="Feed"
+      component={Tweets}
+      options={{  
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons color={color} name="home" size={size} />
+        ),
+      }}
+    />
     <Tab.Screen name="Account" component={Account} />
   </Tab.Navigator>
-)
+);
 
 export default function App() {
   return (
