@@ -7,6 +7,7 @@ import {
   View,
 } from "react-native";
 import colors from "../config/colors";
+import { useEffect } from "react";
 
 function ImageInput({ imageUri, onChangeImage }) {
   const requestPermission = async () => {
