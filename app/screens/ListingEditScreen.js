@@ -33,7 +33,7 @@ export default function ListingEditScreen() {
   const location = useLocation();
   const [uploadVisible, setUploadVisible] = useState(false);
   const [progress, setProgress] = useState(0);
-  
+
   const handleSubmit = async (listing) => {
     setProgress(0);
     setUploadVisible(true);
@@ -41,15 +41,19 @@ export default function ListingEditScreen() {
       { ...listing, location },
       (progress) => setProgress(progress),
     );
-    setUploadVisible(false);
 
-    if (!result.ok) return alert("Could not save the listing.");
-
-    alert("success");
+    if (!result.ok) {
+      setUploadVisible(false);
+      return alert("Could not save the listing.");
+    }
   };
   return (
     <Screen style={styles.container}>
-      <UploadScreen progress={progress} visible={uploadVisible} /> 
+      <UploadScreen
+        onDone={() => setUploadVisible(false)}
+        progress={progress}
+        visible={uploadVisible}
+      />
       <AppForm
         initialValues={{
           title: "",
