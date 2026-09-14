@@ -4,7 +4,7 @@ const endpoint = "/listings";
 
 const getListing = () => client.get(endpoint);
 
-const addListing = (listing) => {
+const addListing = (listing, unUploadProgress) => {
   const data = new FormData();
   data.append("title", listing.title);
   data.append("price", listing.price);
@@ -20,12 +20,15 @@ const addListing = (listing) => {
   );
 
   if (listing.location)
-    data.append('location', JSON.stringify(listing.location))
+    data.append("location", JSON.stringify(listing.location));
 
-  return client.post(endpoint , data)
+  return client.post(endpoint, data, {
+    onDownloadProgress: (process) =>
+      unUploadProgress(process.loaded / process.total),
+  });
 };
 
 export default {
-  addListing, 
+  addListing,
   getListing,
 };

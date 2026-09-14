@@ -16,12 +16,12 @@ import Screen from "./Screen";
 function AppPicker({
   icon,
   items,
+  numberOfColumns,
   onSelectItem,
   PickerItemComponent = PickerItem,
   placeholder,
   selectedItem,
-  numberOfColumns = 1,
-  width = "50%",
+  width = "100%",
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -56,6 +56,7 @@ function AppPicker({
           renderItem={({ item }) => (
             <PickerItemComponent
               item={item}
+              label={item.label}
               onPress={() => {
                 setModalVisible(false);
                 onSelectItem(item);
