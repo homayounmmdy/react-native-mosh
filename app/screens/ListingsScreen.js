@@ -8,22 +8,12 @@ import Card from "../components/Card";
 import Screen from "../components/Screen";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
+import useApi from "../hooks/useApi";
 
 function ListingsScreen({ navigation }) {
-  const [listings, setListings] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  
 
-  const loadListings = async () => {
-    setLoading(true);
-    const response = await listingsApi.getListing();
-    setLoading(false);
-
-    if (!response.ok) return setError(true);
-
-    setError(false);
-    setListings(response.data);
-  };
+  const {data: listings , error , loading , request : loadListings} = useApi(listingsApi.getListing);
 
   useEffect(() => {
     loadListings();
