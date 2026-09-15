@@ -185,3 +185,9 @@ export default function App() {
 - Disable features
 - Cache data
 - Store user action
+
+## Persistence options
+
+- AsyncStorage
+- SecureStore
+- SQLite 
