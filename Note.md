@@ -178,3 +178,10 @@ export default function App() {
   );
 }
 ```
+
+## Strategies for Building Offline Capable Apps
+
+- Notify the user 
+- Disable features
+- Cache data
+- Store user action
