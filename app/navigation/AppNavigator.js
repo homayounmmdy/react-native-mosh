@@ -8,6 +8,7 @@ import ListingEditScreen from "../screens/ListingEditScreen";
 import AccountNavigator from "./AccountNavigator";
 import FeedNavigator from "./FeedNavigator";
 import NewListingButton from "./NewListingButton";
+import navigation from "./rootNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,7 +16,9 @@ const AppNavigator = () => {
   useEffect(() => {
     registerForPushNotifications();
 
-    Notifications.addListener((notification) => console.log(notification));
+    Notifications.addListener((notification) => {
+      navigation.navigate('Account')
+    });
   }, []);
 
   const registerForPushNotifications = async () => {
