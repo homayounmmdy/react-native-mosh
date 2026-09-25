@@ -2,7 +2,7 @@ import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
 import authApi from "../api/auth";
 import Screen from "../components/Screen";
-
+import jwtDecode from 'jwt-decode'
 import { useState } from "react";
 import {
   AppForm,
@@ -23,10 +23,11 @@ function LoginScreen() {
     const result = await authApi.login(email, password);
     if (!result.ok) return setLoginFailed(true);
     setLoginFailed(false);
-    console.log(result.data);
+    const user = jwtDecode(result.data);
+    console.log(user)
   };
   return (
-    <Screen style={styles.container}>
+    <Screen style={styles.conatiner}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
       <AppForm
         initialValues={{ email: "", password: "" }}
@@ -62,7 +63,7 @@ function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  conatiner: {
     padding: 10,
   },
   logo: {
