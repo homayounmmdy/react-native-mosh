@@ -10,7 +10,7 @@ import colors from "../config/colors";
 
 const menuItems = [
   {
-    title: "My Listings",
+    title: "My Listings", 
     icon: {
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
