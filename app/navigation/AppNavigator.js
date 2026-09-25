@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Notifications } from "expo";
 import * as Permissions from "expo-permissions";
 import { useEffect } from "react";
+import expoPushTokensApi from "../api/expoPushTokens";
 import ListingEditScreen from "../screens/ListingEditScreen";
 import AccountNavigator from "./AccountNavigator";
 import FeedNavigator from "./FeedNavigator";
@@ -21,7 +22,7 @@ const AppNavigator = () => {
       if (!permission.granted) return;
 
       const token = Notifications.getExpoPushTokenAsync();
-      console.log(token);
+      expoPushTokensApi.register(token);
     } catch (error) {
       console.log("Error getting a push token", error);
     }
