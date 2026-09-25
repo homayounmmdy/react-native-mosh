@@ -3,13 +3,14 @@ import * as Yup from "yup";
 import authApi from "../api/auth";
 import Screen from "../components/Screen";
 import jwtDecode from 'jwt-decode'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   AppForm,
   AppFormField,
   ErrorMessage,
   SubmitButton,
 } from "../components/forms";
+import AuthContext from "../auth/context";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -17,6 +18,7 @@ const validationSchema = Yup.object().shape({
 });
 
 function LoginScreen() {
+  const authContext = useContext(AuthContext)
   const [loginFailed, setLoginFailed] = useState(false);
 
   const handleSubmit = async ({ email, password }) => {
@@ -24,10 +26,10 @@ function LoginScreen() {
     if (!result.ok) return setLoginFailed(true);
     setLoginFailed(false);
     const user = jwtDecode(result.data);
-    console.log(user)
+    authContext.setUser(user);
   };
   return (
-    <Screen style={styles.conatiner}>
+    <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
       <AppForm
         initialValues={{ email: "", password: "" }}
@@ -63,7 +65,7 @@ function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  conatiner: {
+  container: {
     padding: 10,
   },
   logo: {
