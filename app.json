@@ -6,9 +6,9 @@
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
     "splash": {
-      "image" : "./app/assets/splash.png",
+      "image": "./app/assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor" : "#e63c4b"
+      "backgroundColor": "#e63c4b"
     },
     "userInterfaceStyle": "light",
     "ios": {
@@ -24,6 +24,9 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-splash-screen"
+    ]
   }
 }
