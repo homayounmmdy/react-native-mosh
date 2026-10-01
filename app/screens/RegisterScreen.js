@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { StyleSheet } from "react-native";
 import * as Yup from "yup";
+import authApi from "../api/auth";
 import userApi from "../api/users";
 import useAuth from "../auth/useAuth";
 import ActivityIndicator from "../components/ActivityIndicator";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import {
+  AppForm,
+  AppFormField,
+  ErrorMessage,
+  SubmitButton,
+} from "../components/forms";
 import Screen from "../components/Screen";
 import useApi from "../hooks/useApi";
 
