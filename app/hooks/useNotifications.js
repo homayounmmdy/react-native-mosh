@@ -13,7 +13,7 @@ Notifications.setNotificationHandler({
   }),
 });
 
-export default useNotifications = (notificationListener) => {
+const useNotifications = (notificationListener) => {
   useEffect(() => {
     registerForPushNotifications();
 
@@ -73,3 +73,5 @@ export default useNotifications = (notificationListener) => {
     }
   };
 };
+
+export default useNotifications
